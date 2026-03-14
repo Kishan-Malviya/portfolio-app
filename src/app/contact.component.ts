@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
       <div class="container">
         <h2>Contact</h2>
         <p class="subtext">Let's build something together.</p>
-        <form class="contact-form" (ngSubmit)="submit()" #contactForm="ngForm">
+        <form class="contact-form" (ngSubmit)="submit(contactForm)" #contactForm="ngForm">
           <label>
             Name
             <input name="name" ngModel placeholder="Your Name" required />
@@ -102,8 +102,17 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class ContactComponent {
-  submit() {
-    // Placeholder action: replace with real API call
-    console.log('Contact form submitted');
+  submit(form: any) {
+    if (!form || !form.valid) {
+      return;
+    }
+
+    const { name, email, message } = form.value;
+    const subject = encodeURIComponent('Portfolio Contact Request');
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+
+    window.location.href = `mailto:er.kishan.malviya@gmail.com?subject=${subject}&body=${body}`;
+
+    form.resetForm();
   }
 }

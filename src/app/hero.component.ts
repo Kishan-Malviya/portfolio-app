@@ -116,7 +116,6 @@ import { CommonModule } from '@angular/common';
     }
     .lead {
       max-width: 42ch;
-      margin: 1rem auto 2rem;
       line-height: 1.5;
       font-size: 1.15rem;
       color: #e9f5ff;

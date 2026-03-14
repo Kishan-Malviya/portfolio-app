@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
     <section id="projects" class="section projects-section">
       <div class="container">
         <h2>Projects</h2>
-        <p class="subtext">A selection of placeholder project cards.</p>
         <div class="projects-grid">
           <article class="project-card" *ngFor="let p of projects">
             <div class="project-image">Image placeholder</div>
@@ -36,7 +35,7 @@ import { CommonModule } from '@angular/common';
       margin: 0 auto;
       animation: revealUp 0.7s ease both;
     }
-    .subtext { color: #6c757d; margin-bottom: 1rem; }
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

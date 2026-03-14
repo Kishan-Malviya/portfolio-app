@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
     <section id="about" class="section about-section">
       <div class="section-grid">
-        <div class="image-placeholder" aria-hidden="true">Profile image placeholder</div>
+        <img src="assets/My_Photo.jpeg" alt="Kishan profile photo" class="profile-image" onerror="console.warn('img load failed', this.src); this.style.display='none'" />
         <div>
           <h2>About Me</h2>
           <p>
@@ -42,19 +42,13 @@ import { Component } from '@angular/core';
       align-items: center;
       animation: revealUp 0.7s ease both;
     }
-    .image-placeholder {
-      min-height: 240px;
+    .profile-image {
+      width: 100%;
       border-radius: 1rem;
-      background: linear-gradient(135deg, #e9ecef, #dee2e6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #6c757d;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      text-align: center;
-      padding: 1rem;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      border: 2px solid #dee2e6;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
     }
     .highlights {
       margin: 1rem 0 0;
